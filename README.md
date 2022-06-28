@@ -42,19 +42,19 @@
     }
     ```
 6)Este punto no se locita pero sirve para poder ver las recetas existentes en la siguiente ruta
-    ```url
-    http://localhost:3000/getRecetas [GET]
-    ```
-    Retorna todas las recetas con sus respectivos pacientes.
-    ```json
-    {
+  ```url
+  http://localhost:3000/getRecetas [GET]
+  ```
+  Retorna todas las recetas con sus respectivos pacientes.
+  ```json
+  {
         "id": "67b3da2c-2b47-4e96-8d5b-22b391984c31",
         "comentario": "fumador",
         "doctor": "raska",
         "farmacos": "ansiolitico",
         "id_paciente": "68fd0316-2035-488d-b990-e1e19a34799a"
-    }
-    ```
+   }
+   ```
 7) Finalmete se debe poder elimnar una receta mediante la siguiente ruta
     ```url
     http://localhost:3000/deleteReceta [POST]
@@ -83,6 +83,6 @@ La segunda consiste en generar hashes para posteriormente calcular un arbol bina
 La ventaja principal que posee NetworkTopologyStrategy sobre SimpleStrategy al tener la estructura de un arbol puede almacenar múltiples copias en diferentes datacenters.
 Finalmente utilizaria la estrategia de SimpleStrategy, ya que esta permite utilizzar los nodos requeridos en esta actividad, adicionalmente como se muestra en el enunciado de la tarea, en la figura 1 ejemplo del sistema de Autenticacion, parace ser que al ir en senbtiudo de las manesillas del reloj deberiamos usar esta.
 
-  - Teniendo en cuenta el contexto del problema ¿Usted cree que la solución propuesta es la correcta? ¿Qué ocurre cuando se quiere escalar en la solución? ¿Qué mejoras implementaría? Oriente su respuesta hacia el Sharding (la replicación/distribución de los datos) y comente una estrategia que podría seguir para ordenar los datos.
+   - Teniendo en cuenta el contexto del problema ¿Usted cree que la solución propuesta es la correcta? ¿Qué ocurre cuando se quiere escalar en la solución? ¿Qué mejoras implementaría? Oriente su respuesta hacia el Sharding (la replicación/distribución de los datos) y comente una estrategia que podría seguir para ordenar los datos.
 No creo que sea la solucion correcta, ya que como se menciono anteriormente, se esta desaprovechando la capacidad de cassandra. Utilizaria otra base de datos no relacional, mas facil de implementar y a menor costo, como por ejemplo Mongodb. En caso de escalar imagino que se refier a que hora con una mallor cantidad de datos utilizar cassandra seria bastante bueno, pero teniendo en consideracion que esta tampoco daria a basto bajo en modelo creado en esta tarea. Entonces, si disponemos de los recursos suficientes podriamos ahcer un escalamiento vertical para aumentar la memoria que utiliza cada nodo . Adicionalmente a esto escalaria de manera horizontal utilizando clustering, realizando otro cluster conectandolo al primero para generar otro datacenter, ademas de utilizar NetworkTopologyStrategy para mejorar esta problematica de escalabilidad.
  
