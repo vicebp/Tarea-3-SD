@@ -28,12 +28,11 @@
     }
     ```
     Como respuesta retornará el ID de receta 67b3da2c-2b47-4e96-8d5b-22b391984c31.
-5) Luego con el ID obtenido en el punto anterior, pasaremos al siguiente punto solicitado el cual es editar   
+5) Luego con el ID obtenido en el punto anterior, pasaremos al siguiente punto solicitado el cual es editar
     ```url
     http://localhost:3000/editReceta [POST]
     ```
-    ```
-    json
+    ```json
     {
         "id":" 67b3da2c-2b47-4e96-8d5b-22b391984c31",
         "comentario": "fumador",
