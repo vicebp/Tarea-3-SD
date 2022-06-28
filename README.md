@@ -1,5 +1,5 @@
 # Tarea-3-SD
 
-- Integrantes
+Integrantes
   - Vicente Berroeta
   - Felipe Ponce
